@@ -127,3 +127,151 @@ From the analysis , the following insights and findings were observed:
 
 •	Highlighted underrepresented areas for potential development focus.
 
+Project 2: Descriptive Data Analysis
+
+Project Description:
+
+Descriptive Data Analysis on the City of Vancouver Greenest City Projects Dataset
+
+Project Title:
+
+City of Vancouver Greenest City Projects: A Descriptive Data Analysis
+
+
+
+Objective:
+
+The objective of this project is to evaluate the contribution of "Green-Buildings" projects within CATEGORY2. This analysis calculates the percentage of "Green-Buildings" in CATEGORY2 to assess their 
+representation and understand their role in achieving Vancouver's green initiatives.
+
+
+
+Dataset:
+
+The dataset contains information about projects under the City of Vancouver's Greenest City Action Plan, aimed at advancing sustainability and environmental preservation. It includes 324 entries with the 
+following columns:
+
+
+
+MAPID: A unique identifier assigned to each project.
+
+NAME: The name of the project, representing its official title.
+
+CATEGORY1: Primary classification of the project (e.g., "City projects," "Private projects").
+
+CATEGORY2: Secondary classification of the project, such as "Climate-Leadership" or "Green-Buildings."
+
+ADDRESS: The physical address of the project, if available.
+
+SHORT_DESCRIPTION: A brief description summarizing the project's objectives or impact.
+
+URL, URL2, URL3: Links to additional resources or pages about the project for further information.
+
+Geo Local Area: The geographic region within Vancouver where the project is located, such as Mount Pleasant or other neighborhoods.
+
+Descriptive Analysis Question
+
+What percentage of "Green-Buildings" projects are in CATEGORY2?
+
+
+
+The purpose of this analysis is to determine the proportion of "Green-Buildings" projects in CATEGORY2, providing insights into their representation and highlighting areas that may require additional focus or 
+resources.
+
+
+
+Methodology
+
+Data Ingestion
+
+Objective:
+
+Upload and organize raw greenest city projects data into AWS S3 for easy access and processing.
+
+
+
+Steps:
+
+Created S3 buckets (raw-data-nisha) to store the raw Excel data files.
+
+Structured the data with subfolders by quarter (ingestion_quarter=4) for updates and access requirements.
+
+Configured storage class as S3 Standard to ensure high performance for analytics.
+
+Data Profiling
+
+Objective:
+
+Assess data quality, identify missing values, and gather descriptive statistics.
+
+Steps:
+
+Created new buckets to store profiling results (trf-data-nisha).
+
+
+Connected the dataset to AWS Glue DataBrew for profiling.
+
+Ran profiling jobs to analyze data quality and missing values for each column.
+
+Stored profiling results in designated subfolders.
+
+Data Cleaning
+
+Objective:
+
+Standardize and prepare data for transformation by addressing inconsistencies and missing information.
+
+Steps:
+
+Created a new project in AWS Glue DataBrew for cleaning.
+
+Applied recipes to rename and standardize column names.
+
+Addressed null values and optimized dataset size using compression (Snappy format).
+
+Saved cleaned data in dedicated system and user subfolders in S3.
+
+Data Pipeline Design
+
+Objective:
+
+Aggregate and calculate the percentage of "Green-Buildings" in CATEGORY2.
+
+Steps:
+
+Used AWS Glue Visual ETL for data transformation.
+
+Extracted data from Amazon S3 for initial exploration and mapping.
+
+Filtered out unnecessary columns to clean up data.
+
+Aggregated the number of "Green-Buildings" in CATEGORY2.
+
+Calculated the percentage of "Green-Buildings" projects in CATEGORY2 using derived column transformations.
+
+Saved final results to S3 for further analysis.
+
+Tools and Technologies
+
+The following tools and technologies were utilized to perform the descriptive analysis, ensuring efficient data management and analytics:
+
+
+Amazon S3: Storage for raw, cleaned, and transformed datasets.
+AWS Glue DataBrew: Used for data profiling and cleaning.
+AWS Glue: Automated data pipeline creation and processing.
+
+Insights and Findings
+
+From the analysis, the following insights were observed:
+
+Percentage of "Green-Buildings" in CATEGORY2:
+
+46% of CATEGORY2 projects were identified as "Green-Buildings."
+
+This indicates significant representation but also highlights potential for further promotion and development.
+
+Impact on Green Initiatives:
+
+"Green-Buildings" are a substantial component of Vancouver's sustainability efforts.
+
+Encouraging greater investment in this category could enhance the city’s green goals.
