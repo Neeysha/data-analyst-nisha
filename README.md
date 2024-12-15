@@ -1,277 +1,232 @@
 Data Analytics Projects
+Project 1: Exploratory Data Analysis
+Project Description
+Title: City of Vancouver Greenest city projects: An Exploratory Data Analysis
 
-Project 1 Exploratory Data Analysis
+Objective: 
+To determine whether a correlation exists between the number of projects in CATEGORY2 and the Geo Local Areas where they are implemented.
 
-Project Description: Exploratory Data Analysis (EDA) on the City of Vancouver Greenest City Projects Dataset 
+Dataset
+The dataset contains information about projects under the City of Vancouver's Greenest City Action Plan, aimed at advancing sustainability and environmental preservation. It includes 324 entries with the following columns:
 
-Project Title: City of Vancouver greenest city project: An Exploratory Data Analysis
+• MAPID: A unique identifier assigned to each project.
+• NAME: The name of the project, representing its official title.
+• CATEGORY1: Primary classification of the project. 
+• CATEGORY2: Secondary classification of the project.
+• ADDRESS: The physical address of the project, if available.
+• SHORT_DESCRIPTION: A brief description summarizing the project's objectives or impact.
+• URL, URL2, URL3: Links to additional resources or pages about the project for further information.
+• Geo Local Area: The geographic region within Vancouver where the project is located, such as Mount Pleasant or other neighborhoods.
 
-Objective:
-The objective of this project is to determine whether a correlation exists between the number of projects in CATEGORY2 and the Geo Local Areas where they are implemented. This insight is vital for understanding the geographic distribution of green building projects and identifying patterns or clustering within urban areas. By leveraging data from the City of Vancouver Greenest City Projects dataset, this analysis aims to support sustainable city development and environmental preservation efforts.
-
-Dataset: The dataset contains information about projects under the City of Vancouver's Greenest City Action Plan, aimed at advancing sustainability and environmental preservation. It includes 324 entries with the following columns:
-
-•	MAPID: A unique identifier assigned to each project.
-
-•	NAME: The name of the project, representing its official title.
-
-•	CATEGORY1: Primary classification of the project (e.g., "City projects," "Private projects").
-
-•	CATEGORY2: Secondary classification of the project, such as "Climate-Leadership" or "Green-Buildings."
-
-•	ADDRESS: The physical address of the project, if available.
-
-•	SHORT_DESCRIPTION: A brief description summarizing the project's objectives or impact.
-
-•	URL, URL2, URL3: Links to additional resources or pages about the project for further information.
-
-•	Geo Local Area: The geographic region within Vancouver where the project is located, such as Mount Pleasant or other neighborhoods.
-
-Draw io Diagram Data Analytic Platform (City of Vancouver – Domain- Greenest city projects)
-
-![image](https://github.com/user-attachments/assets/5b876584-1bf0-42c8-b246-0019b1aa4b62)
- 
 Exploratory Analysis Question
-
-Is there a correlation between the number of projects in CATEGORY2 and the Geo Local Areas they are located in? 
-
-The objective of this project is to determine whether a correlation exists between the number of projects in CATEGORY2 and the Geo Local Areas where they are implemented. 
-
-Methodology:
-
-Data Ingestion
-
-Objective: Upload and organize raw greenest city projects data into AWS S3 for easy access and processing.
-
-Steps:
-
-1.	Created S3 buckets (raw-data-nisha) to store the raw Excel data files.
-
-2.	Structured the data with subfolders by quarter (ingestion_quarter=4) to accommodate updates and frequent access requirements.
-
-3.	Configured storage class as S3 Standard to ensure high performance for analytics.
-
-Data Profiling Objective: Assess data quality, identify missing values, and gather descriptive statistics. 
-
-Steps:
-
-1.	Created new buckets to store profiling results (trf-data-nisha).
-
-2.	Connected the dataset to AWS Glue DataBrew for profiling.
-
-3.	Ran profiling jobs to analyze data quality and missing values for each column.
-
-4.	Stored profiling results in designated subfolders.
-
-Data Cleaning Objective: Standardize and prepare data for transformation by addressing inconsistencies and missing information. 
-
-Steps:
-
-1.	Created a new project in AWS Glue DataBrew for cleaning.
-
-2.	Applied recipes to rename and standardize column names.
-
-3.	Addressed null values and optimized dataset size using compression (Snappy format).
-
-4.	Saved cleaned data in dedicated system and user subfolders in S3.
-
-Data Pipeline Design Objective: Transform and aggregate data to find out correlation 
-
-Steps:
-
-1.	Used AWS Glue Visual ETL for data transformation.
-
-2.	Extracted data from Amazon S3 for initial exploration and mapping.
-
-3.	Filtered out unnecessary columns to clean up data.
-
-4.	Renamed keys for the join operation to ensure smooth merging of datasets.
-
-5.	Joined datasets based on specified keys for comparison and transformation.
-
-6.	Applied derived column transformations to enhance data insights.
-
-7.	Performed additional processing steps for validation.
-
-8.	Loaded the final output into S3 for further analysis.
-
-Data Analysis Objective: To determine whether a correlation exists between the number of projects in CATEGORY2 and the Geo Local Areas where they are implemented. 
-
-Steps:
-
-1.	Queried aggregated results in S3 using analytics tools.
-
-2.	Examined the Measured the correlation between the number of CATEGORY2 projects and their Geo Local Areas
-
-3.	Assessed the dispersion of green-building initiatives across Vancouver.
-
-Tools and Technologies
-
-The following tools and technologies were utilized to perform the analysis of correlation, ensuring efficient data management, processing, and analytics:
-
-AWS Services - The Data Analytics Platform (DAP) leveraged several AWS components for scalable and robust data processing:
-
-•	Amazon S3
-
-•	AWS Glue DataBrew
-
-•	AWS Glue
-
-Insights and Findings
-
-From the analysis , the following insights and findings were observed:
-
-•	Identified patterns, such as clustering of CATEGORY2 projects in specific Geo Local Areas.
-
-•	Determined that certain regions show stronger positive correlations, indicating a higher density of green-building initiatives.
-
-•	Highlighted underrepresented areas for potential development focus.
-
-Project 2: Descriptive Data Analysis
-
-Project Description:
-
-Descriptive Data Analysis on the City of Vancouver Greenest City Projects Dataset
-
-Project Title:
-
-City of Vancouver Greenest City Projects: A Descriptive Data Analysis
-
-
-
-Objective:
-
-The objective of this project is to evaluate the contribution of "Green-Buildings" projects within CATEGORY2. This analysis calculates the percentage of "Green-Buildings" in CATEGORY2 to assess their 
-representation and understand their role in achieving Vancouver's green initiatives.
-
-
-
-Dataset:
-
-The dataset contains information about projects under the City of Vancouver's Greenest City Action Plan, aimed at advancing sustainability and environmental preservation. It includes 324 entries with the 
-following columns:
-
-
-
-MAPID: A unique identifier assigned to each project.
-
-NAME: The name of the project, representing its official title.
-
-CATEGORY1: Primary classification of the project (e.g., "City projects," "Private projects").
-
-CATEGORY2: Secondary classification of the project, such as "Climate-Leadership" or "Green-Buildings."
-
-ADDRESS: The physical address of the project, if available.
-
-SHORT_DESCRIPTION: A brief description summarizing the project's objectives or impact.
-
-URL, URL2, URL3: Links to additional resources or pages about the project for further information.
-
-Geo Local Area: The geographic region within Vancouver where the project is located, such as Mount Pleasant or other neighborhoods.
-
-Descriptive Analysis Question
-
-What percentage of "Green-Buildings" projects are in CATEGORY2?
-
-
-
-The purpose of this analysis is to determine the proportion of "Green-Buildings" projects in CATEGORY2, providing insights into their representation and highlighting areas that may require additional focus or 
-resources.
-
-
+Is there a correlation between the number of projects in CATEGORY2 and the Geo Local Areas they are located in?
 
 Methodology
+Data Ingestion:
 
-Data Ingestion
+Uploaded raw data into AWS S3 buckets structured by quarter.
+Configured S3 storage class for performance and frequent access.
+Data Profiling:
 
-Objective:
-
-Upload and organize raw greenest city projects data into AWS S3 for easy access and processing.
-
-
-
-Steps:
-
-Created S3 buckets (raw-data-nisha) to store the raw Excel data files.
-
-Structured the data with subfolders by quarter (ingestion_quarter=4) for updates and access requirements.
-
-Configured storage class as S3 Standard to ensure high performance for analytics.
-
-Data Profiling
-
-Objective:
-
-Assess data quality, identify missing values, and gather descriptive statistics.
-
-Steps:
-
-Created new buckets to store profiling results (trf-data-nisha).
-
-
-Connected the dataset to AWS Glue DataBrew for profiling.
-
-Ran profiling jobs to analyze data quality and missing values for each column.
-
+Used AWS Glue DataBrew to analyze data quality and identify missing values.
 Stored profiling results in designated subfolders.
+Data Cleaning:
 
-Data Cleaning
+Standardized column names and addressed null values.
+Compressed data for optimized storage.
+Data Pipeline Design:
 
-Objective:
+Filtered and Joined datasets based on specified keys for comparison and transformation.
+Applied derived column transformations to enhance data insights.
+Data Analysis:
 
-Standardize and prepare data for transformation by addressing inconsistencies and missing information.
+Queried aggregated results in S3 using analytics tools.
+Examined the Measured the correlation between the number of CATEGORY2 projects and their Geo Local Areas.
+Tools and Technologies
+AWS S3: Data storage and organization.
+AWS Glue DataBrew: Data profiling and cleaning.
+AWS Glue: Visual ETL for data transformation.
+Insights and Findings
+Identified patterns, such as clustering of CATEGORY2 projects in specific Geo Local Areas.
+Determined that certain regions show stronger positive correlations, indicating a higher density of green-building initiatives.
+Highlighted underrepresented areas for potential development focus.
+Design Draw io Diagram Data Analytic Platform (City of Vancouver – Domain- Greenest City Projects)
 
-Steps:
+![image](https://github.com/user-attachments/assets/5b876584-1bf0-42c8-b246-0019b1aa4b62)
 
-Created a new project in AWS Glue DataBrew for cleaning.
+Project 2: Descriptive Analysis
+Project Description
+Title: City of Vancouver Greenest City Projects: A Descriptive Data Analysis
+Objective
+To evaluate the contribution of "Green-Buildings" projects within CATEGORY2.
 
-Applied recipes to rename and standardize column names.
+Dataset
+The dataset contains information about projects under the City of Vancouver's Greenest City Action Plan, aimed at advancing sustainability and environmental preservation. It includes 324 entries with the following columns:
+• MAPID: A unique identifier assigned to each project.
+• NAME: The name of the project, representing its official title.
+• CATEGORY1: Primary classification of the project. 
+• CATEGORY2: Secondary classification of the project.
+• ADDRESS: The physical address of the project, if available.
+• SHORT_DESCRIPTION: A brief description summarizing the project's objectives or impact.
+• URL, URL2, URL3: Links to additional resources or pages about the project for further information.
+• Geo Local Area: The geographic region within Vancouver where the project is located, such as Mount Pleasant or other neighborhoods
+Descriptive Analysis Question
+What percentage of "Green-Buildings" projects are in CATEGORY2?
+Methodology
+Data Ingestion:
 
-Addressed null values and optimized dataset size using compression (Snappy format).
+Uploaded raw data into AWS S3 and organized with lifecycle rules for cost optimization.
+Data Profiling:
 
-Saved cleaned data in dedicated system and user subfolders in S3.
+Analyzed data quality and missing values using AWS Glue DataBrew.
+Data Cleaning:
 
-Data Pipeline Design
-
-Objective:
-
-Aggregate and calculate the percentage of "Green-Buildings" in CATEGORY2.
-
-Steps:
-
-Used AWS Glue Visual ETL for data transformation.
-
-Extracted data from Amazon S3 for initial exploration and mapping.
+Standardized columns and filled missing values.
+Saved cleaned data in CSV and Parquet formats for efficient storage.
+Data Pipeline Design:
 
 Filtered out unnecessary columns to clean up data.
-
 Aggregated the number of "Green-Buildings" in CATEGORY2.
+Saved final results to S3 for further analysis
+Tools and Technologies
+AWS S3: Data storage and lifecycle management.
+AWS Glue DataBrew: Data profiling and cleaning.
+AWS Glue ETL: Visual ETL for data transformation and aggregation.
+Insights and Findings
+46% of CATEGORY2 projects were identified as "Green-Buildings."
+This indicates significant representation but also highlights potential for further promotion and development
+Impact on Green Initiatives:
+"Green-Buildings" are a substantial component of Vancouver's sustainability efforts.
+Encouraging greater investment in this category could enhance the city’s green goals.
 
-Calculated the percentage of "Green-Buildings" projects in CATEGORY2 using derived column transformations.
+Conclusion
+This descriptive analysis provides a detailed understanding of the important role of "Green-Buildings" in CATEGORY2 projects, supporting Vancouver’s green initiatives and guiding future efforts toward sustainability.
 
-Saved final results to S3 for further analysis.
+Design Draw io Diagram Data Analytic Platform (City of Vancouver – Domain- Greenest city projects)
+
+![image](https://github.com/user-attachments/assets/5b876584-1bf0-42c8-b246-0019b1aa4b62)
+
+Project 3: Diagnostic Analysis
+Project Description
+Diagnostic Analysis of Allegations List at UCW Academic Office
+
+Project Title
+Investigating Data Quality, Completeness, and Structure of UCW Scholar Allegations list Dataset
+
+Objective
+The primary goal is to identify any anomalies, missing data, inconsistencies, or patterns in the dataset that may impact its usability for:
+
+Allegations list
+Visualization
+Predictive modeling
+Insights from this analysis will inform necessary data cleaning and transformation steps, ensuring the dataset's readiness for downstream tasks.
+Dataset Overview
+The dataset comprises details about scholarly activities conducted by faculty at UCW.
+
+Dataset Fields:
+Student_ID: Unique ID of the student involved in the allegation.
+Date: Date when the allegation was reported.
+Type_of_Violation: Type of academic violation (e.g., Cheating on Exam, Unauthorized Collaboration).
+Course_Code: Code of the course in which the violation occurred.
+Instructor: Name of the instructor associated with the course.
+Severity: Severity level of the allegation (e.g., Severe, Moderate, Minor).
+Penalty: Penalty imposed for the violation (e.g., Course Failure, Suspension).
+Reported_By: Individual or entity who reported the violation (e.g., Peer, Instructor, TA).
+Resolution_Date: Date when the allegation was resolved.
+Resolution_Outcome: Final outcome of the resolution process (e.g., Case Closed, Appeal Filed, Under Investigation).
+Methodology
+Data Collection and Preparation
+Data Generation
+Simulation Design:
+
+The dataset represents academic integrity allegations reported at UCW.
+Simulated data includes real-world attributes such as student IDs, course codes, types of violations, penalties, and resolution outcomes.
+Tool Used:
+
+ChatGPT: Generated diverse, consistent, and realistic data entries.
+Data Profiling
+Conducted using AWS Glue DataBrew to assess data quality, structure, and completeness.
+
+Step 1: Data Ingestion
+Uploaded the raw dataset to Amazon S3 (aca-raw-mah).
+Connected the dataset to AWS Glue DataBrew for profiling.
+Step 2: Profiling Job Setup
+Created a profiling job in AWS Glue DataBrew for column-wise analysis.
+Included all 10 columns with String Columns (8)and Integer Columns (2)
+Step 3: Profiling Insights
+Data Quality
+
+Validity: 100% valid values for all columns.
+Missing Values: None found (0% missing).
+Vaild cells: 400(100%)
+Outliers: No outliers detected.
+Value Distribution
+
+Distinct Values:
+Student_ID: 50 unique values (high cardinality), ensuring consistent identification of each student.
+Consistent uniqueness across other fields.
+String Length: Uniform distribution for text-based columns.
+Other Distinct Values
+Type_of_Violation: 5 distinct values (e.g., Cheating on Exam, Plagiarism).
+Course_Code: 5 distinct values (e.g., MBA104, MBA103).
+Instructor: 5 distinct values (e.g., Dr. Lee, Prof. Brown).
+Severity: 3 distinct values (e.g., Minor, Moderate, Severe).
+Penalty: 4 distinct values (e.g., Course Failure, Suspension).
+Reported_By: 4 distinct values (e.g., Peer, TA, Instructor).
+Resolution_Outcome: 4 distinct values (e.g., Case Closed, Appeal Filed).
+Step 4: Storage of Results
+Stored profiling results in Amazon S3 (Data-Profiling folder in bucket aca-trf-mah).
+Step 5: Validation and Action Plan
+Validation:
+
+Dataset meets quality standards with no missing values or anomalies.
+Data aligns with the expected schema.
+Action Plan:
+
+No immediate cleaning required.
+Ready for downstream analysis (e.g., transformations, aggregations).
+Outcome
+The UCW Allegations list dataset is complete, valid, and ready for analysis. The dataset requires no additional cleaning, ensuring a seamless transition to further analytical steps.
 
 Tools and Technologies
+AWS Glue DataBrew
 
-The following tools and technologies were utilized to perform the descriptive analysis, ensuring efficient data management and analytics:
+Purpose: Automated profiling to assess dataset quality.
+Key Features:
+Data Quality Metrics: Valid, invalid, and missing values.
+Column Profiling: Unique values, distributions, and consistency checks.
+Insights Panel: Cardinality, outliers, and top distinct values.
+Amazon S3
+
+Purpose: Centralized storage for raw data and profiling results.
+Key Features:
+Raw Data Storage: Original dataset.
+Profiling Results: Stored in the Data-Profiling folder.
+Deliverables
+Data Profiling Report
+
+Comprehensive report with:
+Data Quality Metrics
+Column Statistics (value distributions, string lengths)
+Schema Validation
+Data Quality Insights
+
+All columns validated with 100% valid data and no anomalies.
+High cardinality for Faculty_ID ensures unique identification.
+Profiling Results Storage
+
+S3 Folder: Data-Profiling within the aca-trf-mah bucket.
+Data Visualization
+
+Visual summaries generated by AWS Glue DataBrew:
+Bar Charts: Value distributions for key columns.
+Top Distinct Values: Most frequent values for each column. Design
+Draw io Diagram Data Analytic Platform (Allegations UCW Dataset)
+
+![image](https://github.com/user-attachments/assets/b3c44e92-4c25-4769-8ab3-5b0fece62fb4)
+
+Data Profiling Screen AWS Glue Brew
+
+![image](https://github.com/user-attachments/assets/0b398013-51b7-4d49-b502-b23ef096e689)
 
 
-Amazon S3: Storage for raw, cleaned, and transformed datasets.
-AWS Glue DataBrew: Used for data profiling and cleaning.
-AWS Glue: Automated data pipeline creation and processing.
-
-Insights and Findings
-
-From the analysis, the following insights were observed:
-
-Percentage of "Green-Buildings" in CATEGORY2:
-
-46% of CATEGORY2 projects were identified as "Green-Buildings."
-
-This indicates significant representation but also highlights potential for further promotion and development.
-
-Impact on Green Initiatives:
-
-"Green-Buildings" are a substantial component of Vancouver's sustainability efforts.
-
-Encouraging greater investment in this category could enhance the city’s green goals.
