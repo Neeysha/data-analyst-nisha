@@ -1,6 +1,6 @@
-Data Analytics Projects
+# Data Analytics Projects
 
-Project 1: Exploratory Data Analysis
+## Project 1: Exploratory Data Analysis
 
 Project Description
 
@@ -12,21 +12,13 @@ To determine whether a correlation exists between the number of projects in CATE
 Dataset
 The dataset contains information about projects under the City of Vancouver's Greenest City Action Plan, aimed at advancing sustainability and environmental preservation. It includes 324 entries with the following columns:
 
-• MAPID: A unique identifier assigned to each project.
-
-• NAME: The name of the project, representing its official title.
-
-• CATEGORY1: Primary classification of the project. 
-
-• CATEGORY2: Secondary classification of the project.
-
-• ADDRESS: The physical address of the project, if available.
-
-• SHORT_DESCRIPTION: A brief description summarizing the project's objectives or impact.
-
-• URL, URL2, URL3: Links to additional resources or pages about the project for further information.
-
-• Geo Local Area: The geographic region within Vancouver where the project is located, such as Mount Pleasant or other neighborhoods.
+- MAPID: A unique identifier assigned to each project.
+- NAME: The name of the project, representing its official title.CATEGORY1: Primary classification of the project. 
+- CATEGORY2: Secondary classification of the project.
+- ADDRESS: The physical address of the project, if available.
+-  SHORT_DESCRIPTION: A brief description summarizing the project's objectives or impact.
+- URL, URL2, URL3: Links to additional resources or pages about the project for further information.
+- Geo Local Area: The geographic region within Vancouver where the project is located, such as Mount Pleasant or other neighborhoods.
 
 Exploratory Analysis Question
 Is there a correlation between the number of projects in CATEGORY2 and the Geo Local Areas they are located in?
